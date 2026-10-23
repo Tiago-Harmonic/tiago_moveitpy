@@ -24,7 +24,7 @@ class MoveItExecutorNode(Node):
         # Initialize MoveItPy instance (already manages its own executor)
         self.tiago = MoveItPy(node_name="moveit_py_pick")
         self.robot_model = self.tiago.get_robot_model()
-        self.tiago_arm = self.tiago.get_planning_component("arm")
+        self.tiago_arm = self.tiago.get_planning_component("arm_torso")
         self.logger.info("MoveItPy connected!")
 
         # Store joint values of open/close gripper positions
