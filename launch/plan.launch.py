@@ -122,7 +122,8 @@ def start_node(context, *args, **kwargs):
         output="both",
         parameters=[
             moveit_config.to_dict(),
-            {"use_sim_time": use_sim_time}
+            {"use_sim_time": use_sim_time},
+            {"controller_service_call_timeout": 10.0},  # default timeout (3s) is too low for slow CPUs
         ],
     )
 
